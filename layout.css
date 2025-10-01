@@ -28,7 +28,6 @@
   display: flex;
   gap: 30px;
   margin-right: 40px;
-  background-color: #000000;
   padding: 25px;
   border-radius: 5px;
 }
@@ -38,14 +37,9 @@
   font-size: 20px;
   color: rgb(255, 255, 255);
   letter-spacing: 0.04rem;
-}
-
-.navbar-right a:hover {
-  color: #e1eaff;
-}
-
-.navbar a {
-  text-decoration: none;
+  background-color: #000000;
+  padding: 15px;
+  border-radius: 10px;
 }
 
 .headline {
@@ -56,20 +50,14 @@
 }
 
 .listlink {
-  padding: 50px;
+  padding: 35px;
   margin: 10px;
   background-color: #b0b4bd;
   color: #000000;
   text-decoration: none;
-  border-radius: 5px;
-}
-
-.listlink:hover {
-  background-color: #aaaab27c;
-  color: rgb(64, 64, 64);
-  font-weight: bolder;
-  transition: 0.5s;
-  transform: scale(1.01);
+  border-radius: 15px;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .product-grid {
@@ -77,7 +65,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
   grid-template-rows: 1fr 1fr;
-  gap: 1em;
+  gap: 20px;
   padding: 20px;
 }
 
@@ -85,20 +73,20 @@
 .products {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1rem;
-  padding: 20px;
+  gap: 25px;
+  padding: 15px;
 }
 
 .product-card {
   display: flex;
   flex-direction: column;
-  background-color: #b0b4bd;
+  background-color: #ececec;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.362);
   padding: 20px;
   height: 620px;
   width: 300px;
-  margin: 10px;
+    margin: 10px;
 }
 
 .products img {
@@ -142,6 +130,9 @@ h2 {
 
 .sale {
   color: red;
+}
+.sale h2 {
+  color: #000000;
 }
 
 .percent {
