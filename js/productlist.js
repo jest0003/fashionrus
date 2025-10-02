@@ -4,29 +4,43 @@ const header = (document.querySelector("h2").textContent = category);
 
 const productListContainer = document.querySelector(".products");
 
+let allData, currentDataSet;
+
+fetch(`https://kea-alt-del.dk/t7/api/products?limit=20&category=${category}`)
+  .then((res) => res.json())
+  .then((data) => {
+    allData = data;
+    currentDataSet = data;
+    showProduct(allData);
+  });
+
 document
   .querySelectorAll("#filters button")
   .forEach((knap) => knap.addEventListener("click", showFiltered));
+
 
 function showFiltered() {
   console.log(this.dataset.gender);
   const gender = this.dataset.gender;
   if (gender == "All") {
     showProduct(allData);
+    currentDataSet = allData;
   } else {
-    const fraction = allData.filter((product) => product.gender == gender);
-    showProduct(fraction);
+    currentDataSet = allData.filter((product) => product.gender == gender);
   }
+  showProduct(currentDataSet);
 }
 
-let allData;
+document.querySelector("#sorting").addEventListener("click", sortItems);
 
-fetch(`https://kea-alt-del.dk/t7/api/products?limit=20&category=${category}`)
-  .then((res) => res.json())
-  .then((data) => {
-    allData = data;
-    showProduct(allData);
-  });
+  function sortItems(event) {
+    const direction = event.target.dataset.direction;
+    if (direction =="lowHigh") {
+      currentDataSet.sort((a, b) => a.price - b.price);
+    }
+    else {currentDataSet.sort((a, b) => b.price - a.price);}
+    showProduct (currentDataSet);
+  }
 
 function showProduct(products) {
   console.log("products");
