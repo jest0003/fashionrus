@@ -331,6 +331,20 @@ dt {
   cursor: pointer;
 }
 
+.sortbtn {
+  background-color: #262626;
+  text-align: center;
+  color: white;
+  border: none;
+  padding: 10px;
+  margin-left: 20px;
+  margin-top: 10px;
+  border-radius: 20px;
+}
+#sorting {
+  margin-left: 20px;
+}
+
 .filterbtn:hover {
   background-color: #2f2f2f;
   color: white;
